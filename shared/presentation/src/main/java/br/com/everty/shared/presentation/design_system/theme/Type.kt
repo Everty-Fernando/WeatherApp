@@ -1,16 +1,16 @@
-package br.estudo.everty.app_weather.theme
+package br.com.everty.shared.presentation.design_system.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.sp
-import br.estudo.everty.app_weather.R
+import br.com.everty.shared.presentation.R
 
 
 val circularStdFamily = FontFamily(

@@ -19,8 +19,8 @@ import br.estudo.everty.app_weather.home.ui.screens.events.HomeEvents
 import br.estudo.everty.app_weather.home.ui.screens.preview.homeEventsPreview
 import br.estudo.everty.app_weather.home.ui.screens.preview.homeStateUIPreview
 import br.estudo.everty.app_weather.home.ui.screens.state.HomeStateUI
-import br.estudo.everty.app_weather.theme.AppWeatherTheme
-import br.estudo.everty.app_weather.theme.backgrounds.BackgroundGradientLinearPrimary
+import br.com.everty.shared.presentation.design_system.theme.AppWeatherTheme
+import br.com.everty.shared.presentation.design_system.theme.backgrounds.BackgroundGradientLinearPrimary
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable

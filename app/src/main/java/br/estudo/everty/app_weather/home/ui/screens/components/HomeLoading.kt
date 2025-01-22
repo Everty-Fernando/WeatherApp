@@ -13,14 +13,13 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.estudo.everty.app_weather.theme.AppSpacing
-import br.estudo.everty.app_weather.theme.AppWeatherTheme
-import br.estudo.everty.app_weather.utils.ShimmerAnimation
-import br.estudo.everty.app_weather.utils.ShimmerItemCircle
-import br.estudo.everty.app_weather.utils.ShimmerItemRectangle
+import br.com.everty.shared.presentation.design_system.theme.AppSpacing
+import br.com.everty.shared.presentation.design_system.components.loading.ShimmerAnimation
+import br.com.everty.shared.presentation.design_system.components.loading.ShimmerItemCircle
+import br.com.everty.shared.presentation.design_system.components.loading.ShimmerItemRectangle
+import br.com.everty.shared.presentation.design_system.theme.AppWeatherTheme
 
 @ExperimentalAnimationApi
 @Composable

@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.theme
+package br.com.everty.shared.presentation.design_system.theme
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.darkColorScheme
@@ -8,7 +8,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
-import br.estudo.everty.app_weather.R
+import br.com.everty.shared.presentation.R
 
 val LightThemeColors: ColorScheme @Composable get() = lightColorScheme(
     primary = colorResource(id = R.color.light_primary),

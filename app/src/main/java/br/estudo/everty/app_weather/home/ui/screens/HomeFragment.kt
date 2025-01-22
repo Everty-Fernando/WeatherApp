@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import br.estudo.everty.app_weather.home.ui.screens.events.HomeEvents
 import br.estudo.everty.app_weather.home.ui.screens.model.ErrorState
 import br.estudo.everty.app_weather.home.ui.screens.viewmodel.HomeViewModel
-import br.estudo.everty.app_weather.theme.AppWeatherTheme
+import br.com.everty.shared.presentation.design_system.theme.AppWeatherTheme
 import br.estudo.everty.app_weather.utils.extensions.openLocationSettings
 import br.estudo.everty.app_weather.utils.extensions.redirectToAppSettings
 import br.estudo.everty.app_weather.utils.extensions.runAfter

@@ -14,9 +14,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import br.estudo.everty.app_weather.theme.AppSpacing
+import br.com.everty.shared.presentation.design_system.theme.AppSpacing
 import br.estudo.everty.app_weather.R
-import br.estudo.everty.app_weather.theme.AppWeatherExtended
+import br.com.everty.shared.presentation.design_system.theme.AppWeatherExtended
 
 
 @Composable

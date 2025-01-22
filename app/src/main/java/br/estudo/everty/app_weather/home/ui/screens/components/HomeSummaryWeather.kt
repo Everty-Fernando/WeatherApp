@@ -20,12 +20,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import br.estudo.everty.app_weather.theme.AppSpacing
+import br.com.everty.shared.presentation.design_system.theme.AppSpacing
 import br.estudo.everty.app_weather.R
 import br.estudo.everty.app_weather.home.domain.model.WeatherDataUI
-import br.estudo.everty.app_weather.theme.AppCustomTypography
-import br.estudo.everty.app_weather.theme.AppWeatherExtended
-import br.estudo.everty.app_weather.theme.lightExtendedColors
+import br.com.everty.shared.presentation.design_system.theme.AppCustomTypography
+import br.com.everty.shared.presentation.design_system.theme.AppWeatherExtended
+import br.com.everty.shared.presentation.design_system.theme.lightExtendedColors
 
 @Composable
 fun HomeSummaryWeatherContent(weatherDataUI: WeatherDataUI) {

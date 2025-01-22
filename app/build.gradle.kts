@@ -54,7 +54,7 @@ android {
 }
 
 dependencies {
-
+    implementation(project(SharedModules.presentation))
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
@@ -82,5 +82,4 @@ dependencies {
     implementation("com.google.android.gms:play-services-location:20.0.0")
     implementation("com.google.android.gms:play-services-places:17.0.0")
     implementation("com.airbnb.android:lottie-compose:5.2.0")
-
 }

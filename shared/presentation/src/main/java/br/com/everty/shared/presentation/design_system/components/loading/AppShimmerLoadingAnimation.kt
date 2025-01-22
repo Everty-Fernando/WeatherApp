@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.utils
+package br.com.everty.shared.presentation.design_system.components.loading
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import br.estudo.everty.app_weather.theme.AppWeatherTheme
+import br.com.everty.shared.presentation.design_system.theme.AppWeatherTheme
 
 
 @Composable

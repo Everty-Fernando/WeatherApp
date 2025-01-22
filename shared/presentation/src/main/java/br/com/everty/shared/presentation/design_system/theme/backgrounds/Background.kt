@@ -1,10 +1,10 @@
-package br.estudo.everty.app_weather.theme.backgrounds
+package br.com.everty.shared.presentation.design_system.theme.backgrounds
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
-import br.estudo.everty.app_weather.theme.lightExtendedColors
+import br.com.everty.shared.presentation.design_system.theme.lightExtendedColors
 
 
 @Composable

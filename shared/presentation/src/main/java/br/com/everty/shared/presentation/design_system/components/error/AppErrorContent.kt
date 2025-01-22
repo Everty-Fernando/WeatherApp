@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.presentation.design_system.components
+package br.com.everty.shared.presentation.design_system.components.error
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -23,10 +23,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.estudo.everty.app_weather.R
-import br.estudo.everty.app_weather.theme.AppCustomTypography
-import br.estudo.everty.app_weather.theme.AppSpacing
-import br.estudo.everty.app_weather.theme.AppWeatherTheme
+import br.com.everty.shared.presentation.R
+import br.com.everty.shared.presentation.design_system.theme.AppCustomTypography
+import br.com.everty.shared.presentation.design_system.theme.AppSpacing
+import br.com.everty.shared.presentation.design_system.theme.AppWeatherTheme
 
 @Composable
 fun AppErrorContent(
@@ -85,7 +85,7 @@ fun AppErrorContent(
 @Preview
 @Composable
 fun AppErrorContentPreview() {
-    AppWeatherTheme {
+   AppWeatherTheme {
         AppErrorContent(
             titleError = "Erro no servidor",
             descriptionError = "Lamentamos, ocorreu uma falha ao recuperar as informações meteorológicas. Por favor, verifique sua conexão com a internet e tente novamente mais tarde.",

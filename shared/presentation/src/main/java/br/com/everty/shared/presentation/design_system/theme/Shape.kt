@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.theme
+package br.com.everty.shared.presentation.design_system.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

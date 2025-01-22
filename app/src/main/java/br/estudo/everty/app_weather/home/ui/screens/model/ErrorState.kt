@@ -1,6 +1,7 @@
 package br.estudo.everty.app_weather.home.ui.screens.model
 
-import br.estudo.everty.app_weather.R
+
+import br.com.everty.shared.presentation.R
 
 enum class ErrorState(
     val title: String,
