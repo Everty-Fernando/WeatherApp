@@ -18,12 +18,7 @@ class WeatherDataUIMapper(
             return WeatherDataUI(
                 date = date.convertTimestampToString(FORMAT_MONTH_YEAR_FULL),
                 listSummary = summaryMapper.toObject(fromObject),
-//            sunrise = fromObject.sunrise.convertTimestampToString(FORMAT_HOURS),
-//            sunset = fromObject.sunset.convertTimestampToString(FORMAT_HOURS),
                 temperature = temperature.toDegreeCelsius(),
-//            humidity = "${ fromObject.humidity.toInt()}%",
-//            clouds = "${ fromObject.clouds.toInt()}%",
-//            windSpeed = "${ fromObject.windSpeed} km/h",
                 description = weather.first().description.firstLetterUpperCase(),
                 icon = weatherImageUIMapper.toObject(weather.first().main),
             )

@@ -9,7 +9,7 @@ import br.estudo.everty.app_weather.BuildConfig
 
 class WeatherRepositoryImpl(private val api: WeatherAPI): WeatherRepository {
 
-    override suspend fun getMeteorologicalData(lat: Double, lon: Double): Flow<MeteorologicalDataResponse> = flow {
+    override fun getMeteorologicalData(lat: Double, lon: Double): Flow<MeteorologicalDataResponse> = flow {
         try {
             val response = api.getMeteorologicalData(
                 lat = lat,
@@ -19,7 +19,7 @@ class WeatherRepositoryImpl(private val api: WeatherAPI): WeatherRepository {
             val dataResponse = response.body()
             if (response.isSuccessful && dataResponse != null) {
                 emit(dataResponse)
-            } else {
+            } else {// Como está sendo um uso simples, acabei não fazendo o mapeamento dos erros, para não exibir apenas um erro genérico para o usuário
                 throw Exception()
             }
         } catch (e: Exception) {

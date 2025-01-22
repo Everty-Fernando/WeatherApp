@@ -21,24 +21,17 @@ class SummaryUIMapper(
         fromObject.current.apply {
             listItems.forEach {  item ->
                 when(item.title) {
-                    context.getString(R.string.item_summary_min_max) -> {
-                        item.value = getMinMaxTemperature(fromObject)
-                    }
-                    context.getString(R.string.item_summary_sun_set) -> {
-                        item.value =  sunset.convertTimestampToString(FORMAT_HOURS_MINUTES)
-                    }
-                    context.getString(R.string.item_summary_sun_rise) -> {
-                        item.value =  sunrise.convertTimestampToString(FORMAT_HOURS_MINUTES)
-                    }
-                    context.getString(R.string.item_summary_rain) -> {
-                        item.value =  "${clouds.toInt()}%"
-                    }
-                    context.getString(R.string.item_summary_wind) -> {
-                        item.value =  "$windSpeed km/h"
-                    }
-                    context.getString(R.string.item_summary_drop) -> {
-                        item.value =  "${humidity.toInt()}%"
-                    }
+                    context.getString(R.string.item_summary_min_max) -> item.value = getMinMaxTemperature(fromObject)
+
+                    context.getString(R.string.item_summary_sun_set) -> item.value =  sunset.convertTimestampToString(FORMAT_HOURS_MINUTES)
+
+                    context.getString(R.string.item_summary_sun_rise) -> item.value =  sunrise.convertTimestampToString(FORMAT_HOURS_MINUTES)
+
+                    context.getString(R.string.item_summary_rain) -> item.value =  "${clouds.toInt()}%"
+
+                    context.getString(R.string.item_summary_wind) -> item.value =  "$windSpeed km/h"
+
+                    context.getString(R.string.item_summary_drop) -> item.value =  "${humidity.toInt()}%"
                 }
             }
         }
