@@ -1,8 +1,8 @@
-package br.estudo.everty.app_weather.home.domain.usecase
+package br.com.everty.home.home_domain.usecase
 
 import br.com.everty.home.home_data.repository.WeatherRepository
-import br.estudo.everty.app_weather.home.domain.mappers.MeteorologicalDataUIMapper
-import br.estudo.everty.app_weather.home.domain.model.MeteorologicalDataUI
+import br.com.everty.home.home_domain.mappers.MeteorologicalDataUIMapper
+import br.com.everty.home.home_domain.model.MeteorologicalDataUI
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

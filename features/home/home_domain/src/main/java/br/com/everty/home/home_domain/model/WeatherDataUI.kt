@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.home.domain.model
+package br.com.everty.home.home_domain.model
 
 
 data class WeatherDataUI(

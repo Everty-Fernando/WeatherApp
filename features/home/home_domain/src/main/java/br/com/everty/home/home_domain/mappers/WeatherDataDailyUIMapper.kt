@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.home.domain.mappers
+package br.com.everty.home.home_domain.mappers
 
 import br.com.everty.home.home_data.model.TemperatureResponse
 import br.com.everty.home.home_data.model.WeatherDailyResponse
@@ -6,7 +6,7 @@ import br.com.everty.shared.utils.extensions.convertTimestampToLocalDate
 import br.com.everty.shared.utils.extensions.firstLetterUpperCase
 import br.com.everty.shared.utils.extensions.toDegreeCelsius
 import br.com.everty.shared.utils.mappers.Mapper
-import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
+import br.com.everty.home.home_domain.model.WeatherTimelineUI
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.TextStyle
 import java.util.Locale

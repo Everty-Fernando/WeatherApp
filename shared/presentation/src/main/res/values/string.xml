@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <string name="current_location">Localização atual</string>
+    <string name="filter_daily">Diário</string>
+    <string name="filter_weekly">Semanal</string>
+    <string name="home_summary">Resumo</string>
+    <string name="min_max_temperature">min/Max</string>
+    <string name="home_text_sun_raise">Sun raise</string>
+    <string name="home_text_cloud">Cloud</string>
+    <string name="home_text_sun_set">Sun set</string>
+    <string name="home_text_haze">Haze</string>
+    <string name="home_text_drop">Drop</string>
+    <string name="item_summary_min_max">min/Max</string>
+    <string name="item_summary_sun_set">Pôr do sol</string>
+    <string name="item_summary_rain">Chuva</string>
+    <string name="item_summary_sun_rise">Nascer do sol</string>
+    <string name="item_summary_wind">Vento</string>
+    <string name="item_summary_drop">Umidade</string>
+
+</resources>

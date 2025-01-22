@@ -1,11 +1,11 @@
-package br.estudo.everty.app_weather.home.domain.mappers
+package br.com.everty.home.home_domain.mappers
 
 import br.com.everty.home.home_data.model.WeatherDataResponse
 import br.com.everty.shared.utils.extensions.FORMAT_HOURS
 import br.com.everty.shared.utils.extensions.convertTimestampToString
 import br.com.everty.shared.utils.extensions.toDegreeCelsius
 import br.com.everty.shared.utils.mappers.Mapper
-import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
+import br.com.everty.home.home_domain.model.WeatherTimelineUI
 import org.threeten.bp.LocalTime
 
 class WeatherDataHoursUIMapper(

@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.home.domain.mappers
+package br.com.everty.home.home_domain.mappers
 
 import br.com.everty.home.home_data.model.MeteorologicalDataResponse
 import br.com.everty.shared.utils.extensions.FORMAT_MONTH_YEAR_FULL
@@ -6,7 +6,7 @@ import br.com.everty.shared.utils.extensions.convertTimestampToString
 import br.com.everty.shared.utils.extensions.firstLetterUpperCase
 import br.com.everty.shared.utils.extensions.toDegreeCelsius
 import br.com.everty.shared.utils.mappers.Mapper
-import br.estudo.everty.app_weather.home.domain.model.WeatherDataUI
+import br.com.everty.home.home_domain.model.WeatherDataUI
 
 class WeatherDataUIMapper(
     private val summaryMapper: SummaryUIMapper,

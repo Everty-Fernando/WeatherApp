@@ -59,6 +59,7 @@ dependencies {
     implementation(project(SharedModules.utils))
 
     implementation(project(FeatureModules.homeData))
+    implementation(project(FeatureModules.homeDomain))
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")

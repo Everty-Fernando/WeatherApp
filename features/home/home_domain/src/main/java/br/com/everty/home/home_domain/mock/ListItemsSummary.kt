@@ -1,8 +1,8 @@
-package br.estudo.everty.app_weather.home.domain.mock
+package br.com.everty.home.home_domain.mock
 
 import android.content.Context
-import br.estudo.everty.app_weather.R
-import br.estudo.everty.app_weather.home.domain.model.ItemSummaryUI
+import br.com.everty.shared.presentation.R
+import br.com.everty.home.home_domain.model.ItemSummaryUI
 
 fun getItemsSummary(context: Context): List<ItemSummaryUI> {
     return listOf(

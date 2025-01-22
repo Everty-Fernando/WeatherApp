@@ -20,7 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import br.com.everty.shared.presentation.design_system.theme.AppSpacing
-import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
+import br.com.everty.home.home_domain.model.WeatherTimelineUI
 import br.com.everty.shared.presentation.design_system.theme.AppCustomTypography
 import br.com.everty.shared.presentation.design_system.theme.AppWeatherExtended
 import br.com.everty.shared.presentation.design_system.theme.backgrounds.BackgroundGradientTransparent

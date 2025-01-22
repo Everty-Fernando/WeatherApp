@@ -15,7 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import br.com.everty.shared.presentation.design_system.theme.AppSpacing
 import br.com.everty.shared.presentation.design_system.theme.AppWeatherExtended
-import br.estudo.everty.app_weather.R
+import br.com.everty.shared.presentation.R
 
 @Composable
 fun HomeHeader(cityName: String) {

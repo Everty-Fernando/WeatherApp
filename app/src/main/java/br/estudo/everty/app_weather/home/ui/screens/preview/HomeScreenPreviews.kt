@@ -1,12 +1,12 @@
 package br.estudo.everty.app_weather.home.ui.screens.preview
 
-import br.estudo.everty.app_weather.R
-import br.estudo.everty.app_weather.home.domain.model.ItemSummaryUI
-import br.estudo.everty.app_weather.home.domain.model.MeteorologicalDataUI
-import br.estudo.everty.app_weather.home.domain.model.WeatherDataUI
-import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
+import br.com.everty.home.home_domain.model.ItemSummaryUI
+import br.com.everty.home.home_domain.model.MeteorologicalDataUI
+import br.com.everty.home.home_domain.model.WeatherDataUI
+import br.com.everty.home.home_domain.model.WeatherTimelineUI
 import br.estudo.everty.app_weather.home.ui.screens.events.HomeEvents
 import br.estudo.everty.app_weather.home.ui.screens.state.HomeStateUI
+import br.com.everty.shared.presentation.R
 
 
 val item1 = ItemSummaryUI(

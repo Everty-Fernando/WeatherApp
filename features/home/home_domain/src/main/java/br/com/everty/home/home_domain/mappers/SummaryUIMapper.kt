@@ -1,15 +1,15 @@
-package br.estudo.everty.app_weather.home.domain.mappers
+package br.com.everty.home.home_domain.mappers
 
 import android.content.Context
 import br.com.everty.home.home_data.model.MeteorologicalDataResponse
+import br.com.everty.home.home_domain.mock.getItemsSummary
+import br.com.everty.home.home_domain.model.ItemSummaryUI
 import br.com.everty.shared.utils.extensions.FORMAT_HOURS_MINUTES
 import br.com.everty.shared.utils.extensions.convertTimestampToLocalDate
 import br.com.everty.shared.utils.extensions.convertTimestampToString
 import br.com.everty.shared.utils.extensions.toDegreeCelsius
 import br.com.everty.shared.utils.mappers.Mapper
-import br.estudo.everty.app_weather.R
-import br.estudo.everty.app_weather.home.domain.mock.getItemsSummary
-import br.estudo.everty.app_weather.home.domain.model.ItemSummaryUI
+import br.com.everty.shared.presentation.R
 
 class SummaryUIMapper(
     private val context: Context

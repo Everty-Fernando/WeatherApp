@@ -21,8 +21,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import br.com.everty.shared.presentation.design_system.theme.AppSpacing
-import br.estudo.everty.app_weather.R
-import br.estudo.everty.app_weather.home.domain.model.WeatherDataUI
+import br.com.everty.shared.presentation.R
+import br.com.everty.home.home_domain.model.WeatherDataUI
 import br.com.everty.shared.presentation.design_system.theme.AppCustomTypography
 import br.com.everty.shared.presentation.design_system.theme.AppWeatherExtended
 import br.com.everty.shared.presentation.design_system.theme.lightExtendedColors

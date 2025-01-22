@@ -1,6 +1,7 @@
-package br.estudo.everty.app_weather.home.domain.mappers
+package br.com.everty.home.home_domain.mappers
 
-import br.estudo.everty.app_weather.R
+
+import br.com.everty.shared.presentation.R
 import br.com.everty.shared.utils.mappers.Mapper
 
 class WeatherImageUIMapper: Mapper<String, Int> {

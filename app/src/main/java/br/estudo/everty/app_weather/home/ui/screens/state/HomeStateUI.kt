@@ -1,7 +1,7 @@
 package br.estudo.everty.app_weather.home.ui.screens.state
 
-import br.estudo.everty.app_weather.home.domain.model.MeteorologicalDataUI
-import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
+import br.com.everty.home.home_domain.model.MeteorologicalDataUI
+import br.com.everty.home.home_domain.model.WeatherTimelineUI
 import br.estudo.everty.app_weather.home.ui.screens.model.ErrorState
 
 data class HomeStateUI(
