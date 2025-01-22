@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.home.data.repository.mock
+package br.estudo.everty.app_weather.home.domain.mock
 
 import android.content.Context
 import br.estudo.everty.app_weather.R

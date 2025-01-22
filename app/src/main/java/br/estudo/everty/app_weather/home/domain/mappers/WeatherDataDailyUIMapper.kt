@@ -1,11 +1,11 @@
 package br.estudo.everty.app_weather.home.domain.mappers
 
+import br.com.everty.home.home_data.model.TemperatureResponse
+import br.com.everty.home.home_data.model.WeatherDailyResponse
 import br.com.everty.shared.utils.extensions.convertTimestampToLocalDate
 import br.com.everty.shared.utils.extensions.firstLetterUpperCase
 import br.com.everty.shared.utils.extensions.toDegreeCelsius
 import br.com.everty.shared.utils.mappers.Mapper
-import br.estudo.everty.app_weather.home.data.model.TemperatureResponse
-import br.estudo.everty.app_weather.home.data.model.WeatherDailyResponse
 import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.TextStyle

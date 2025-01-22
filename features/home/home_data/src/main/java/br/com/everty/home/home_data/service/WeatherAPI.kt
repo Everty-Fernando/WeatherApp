@@ -1,6 +1,6 @@
-package br.estudo.everty.app_weather.home.data.service
+package br.com.everty.home.home_data.service
 
-import br.estudo.everty.app_weather.home.data.model.MeteorologicalDataResponse
+import br.com.everty.home.home_data.model.MeteorologicalDataResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

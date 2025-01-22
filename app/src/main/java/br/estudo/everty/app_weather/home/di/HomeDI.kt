@@ -2,9 +2,9 @@ package br.estudo.everty.app_weather.home.di
 
 import br.com.everty.shared.network.ApiClient
 import br.com.everty.shared.utils.helpers.LocationHelper
-import br.estudo.everty.app_weather.home.data.repository.WeatherRepository
-import br.estudo.everty.app_weather.home.data.repository.WeatherRepositoryImpl
-import br.estudo.everty.app_weather.home.data.service.WeatherAPI
+import br.com.everty.home.home_data.repository.WeatherRepository
+import br.com.everty.home.home_data.repository.WeatherRepositoryImpl
+import br.com.everty.home.home_data.service.WeatherAPI
 import br.estudo.everty.app_weather.home.domain.usecase.GetMeteorologicalDataUseCase
 import br.estudo.everty.app_weather.home.domain.mappers.MeteorologicalDataUIMapper
 import br.estudo.everty.app_weather.home.domain.mappers.SummaryUIMapper
@@ -21,13 +21,7 @@ import org.koin.dsl.module
 fun injectHomeModule() = loadStartupUIModule
 
 private val loadStartupUIModule by lazy {
-    loadKoinModules(listOf(dataModule, domainModule, uiModule))
-}
-private val dataModule = module {
-    single<WeatherRepository> { WeatherRepositoryImpl(get()) }
-    single { ApiClient(
-       "https://api.openweathermap.org/data/3.0/"
-    ).client.create(WeatherAPI::class.java) }
+    loadKoinModules(listOf(domainModule, uiModule))
 }
 
 private val domainModule = module {

@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.home.data.model
+package br.com.everty.home.home_data.model
 
 import com.google.gson.annotations.SerializedName
 

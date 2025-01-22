@@ -1,10 +1,10 @@
-package br.estudo.everty.app_weather.home.data.repository
+package br.com.everty.home.home_data.repository
 
-import br.estudo.everty.app_weather.home.data.model.MeteorologicalDataResponse
-import br.estudo.everty.app_weather.home.data.service.WeatherAPI
+import br.com.everty.home.home_data.BuildConfig
+import br.com.everty.home.home_data.model.MeteorologicalDataResponse
+import br.com.everty.home.home_data.service.WeatherAPI
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import br.estudo.everty.app_weather.BuildConfig
 
 
 class WeatherRepositoryImpl(private val api: WeatherAPI): WeatherRepository {
