@@ -20,15 +20,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import br.estudo.everty.app_weather.theme.AppSpacing
-import br.estudo.everty.app_weather.R
-import br.estudo.everty.app_weather.home.data.model.Weather
-import br.estudo.everty.app_weather.home.domain.model.WeatherDataHoursUI
+import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
 import br.estudo.everty.app_weather.theme.AppCustomTypography
 import br.estudo.everty.app_weather.theme.AppWeatherExtended
 import br.estudo.everty.app_weather.theme.backgrounds.BackgroundGradientTransparent
 
 @Composable
-fun HomeFooter(weatherList: List<WeatherDataHoursUI>) {
+fun HomeFooter(weatherList: List<WeatherTimelineUI>) {
     Column(modifier = Modifier.fillMaxSize()) {
         LazyRow(
             modifier = Modifier

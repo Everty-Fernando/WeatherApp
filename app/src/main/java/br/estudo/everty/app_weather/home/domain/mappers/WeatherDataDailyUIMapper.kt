@@ -2,7 +2,7 @@ package br.estudo.everty.app_weather.home.domain.mappers
 
 import br.estudo.everty.app_weather.home.data.model.TemperatureResponse
 import br.estudo.everty.app_weather.home.data.model.WeatherDailyResponse
-import br.estudo.everty.app_weather.home.domain.model.WeatherDataHoursUI
+import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
 import br.estudo.everty.app_weather.utils.extensions.convertTimestampToLocalDate
 import br.estudo.everty.app_weather.utils.extensions.firstLetterUpperCase
 import br.estudo.everty.app_weather.utils.extensions.toDegreeCelsius
@@ -13,10 +13,10 @@ import java.util.Locale
 
 class WeatherDataDailyUIMapper(
     private val weatherImageUIMapper: WeatherImageUIMapper
-): Mapper<WeatherDailyResponse, WeatherDataHoursUI> {
+): Mapper<WeatherDailyResponse, WeatherTimelineUI> {
 
-    override fun toObject(fromObject: WeatherDailyResponse): WeatherDataHoursUI {
-        return WeatherDataHoursUI(
+    override fun toObject(fromObject: WeatherDailyResponse): WeatherTimelineUI {
+        return WeatherTimelineUI(
             date = checkCurrentDate(fromObject.date),
             temperature = getMinMaxTemperature(fromObject.temperature),
             icon = weatherImageUIMapper.toObject(fromObject.weather.first().main),

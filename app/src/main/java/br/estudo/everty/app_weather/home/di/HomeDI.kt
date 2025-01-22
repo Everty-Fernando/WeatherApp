@@ -12,6 +12,8 @@ import br.estudo.everty.app_weather.home.domain.mappers.WeatherDataUIMapper
 import br.estudo.everty.app_weather.home.domain.mappers.WeatherImageUIMapper
 import br.estudo.everty.app_weather.home.ui.screens.viewmodel.HomeViewModel
 import br.estudo.everty.app_weather.network.ApiClient
+import br.estudo.everty.app_weather.utils.helpers.LocationHelper
+import com.google.android.gms.location.LocationServices
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
@@ -38,5 +40,6 @@ private val domainModule = module {
 }
 
 private val uiModule = module {
-    factory { HomeViewModel(get(), androidContext()) }
+    factory { HomeViewModel(get(), get(), get()) }
+    factory { LocationHelper(androidContext(), LocationServices.getFusedLocationProviderClient(androidContext())) }
 }

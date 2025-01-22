@@ -13,6 +13,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
 object LocationUtils {
+    private const val REQUEST_LOCATION_PERMISSION = 1
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     fun requestPermissionLocale(activity: Activity) {
@@ -30,7 +31,7 @@ object LocationUtils {
             ActivityCompat.requestPermissions(
                 activity,
                 arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
-                HomeActivity.REQUEST_LOCATION_PERMISSION
+                REQUEST_LOCATION_PERMISSION
             )
         }
     }

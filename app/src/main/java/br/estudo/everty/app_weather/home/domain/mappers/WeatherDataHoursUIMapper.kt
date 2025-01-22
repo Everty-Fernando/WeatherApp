@@ -1,7 +1,7 @@
 package br.estudo.everty.app_weather.home.domain.mappers
 
 import br.estudo.everty.app_weather.home.data.model.WeatherDataResponse
-import br.estudo.everty.app_weather.home.domain.model.WeatherDataHoursUI
+import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
 import br.estudo.everty.app_weather.utils.extensions.FORMAT_HOURS
 import br.estudo.everty.app_weather.utils.extensions.convertTimestampToString
 import br.estudo.everty.app_weather.utils.extensions.toDegreeCelsius
@@ -10,10 +10,10 @@ import org.threeten.bp.LocalTime
 
 class WeatherDataHoursUIMapper(
     private val weatherImageUIMapper: WeatherImageUIMapper
-): Mapper<WeatherDataResponse, WeatherDataHoursUI> {
+): Mapper<WeatherDataResponse, WeatherTimelineUI> {
 
-    override fun toObject(fromObject: WeatherDataResponse): WeatherDataHoursUI {
-        return WeatherDataHoursUI(
+    override fun toObject(fromObject: WeatherDataResponse): WeatherTimelineUI {
+        return WeatherTimelineUI(
             date = checkCurrentDate(fromObject.date),
             temperature = fromObject.temperature.toDegreeCelsius(),
             icon = weatherImageUIMapper.toObject(fromObject.weather.first().main),
