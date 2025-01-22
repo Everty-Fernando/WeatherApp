@@ -1,5 +1,5 @@
 object ApplicationConfig {
-    const val id = "br.com.giro"
+    const val id = "br.com.weatherapp"
     const val minSdk = 22
     const val buildToolsVersion = "31.0.0"
     const val compileSdkVersion = 34
