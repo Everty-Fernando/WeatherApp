@@ -1,5 +1,6 @@
 package br.estudo.everty.app_weather.home.di
 
+import br.com.everty.shared.network.ApiClient
 import br.estudo.everty.app_weather.home.data.repository.WeatherRepository
 import br.estudo.everty.app_weather.home.data.repository.WeatherRepositoryImpl
 import br.estudo.everty.app_weather.home.data.service.WeatherAPI
@@ -11,7 +12,6 @@ import br.estudo.everty.app_weather.home.domain.mappers.WeatherDataHoursUIMapper
 import br.estudo.everty.app_weather.home.domain.mappers.WeatherDataUIMapper
 import br.estudo.everty.app_weather.home.domain.mappers.WeatherImageUIMapper
 import br.estudo.everty.app_weather.home.ui.screens.viewmodel.HomeViewModel
-import br.estudo.everty.app_weather.network.ApiClient
 import br.estudo.everty.app_weather.utils.helpers.LocationHelper
 import com.google.android.gms.location.LocationServices
 import org.koin.android.ext.koin.androidContext
@@ -29,6 +29,7 @@ private val dataModule = module {
        "https://api.openweathermap.org/data/3.0/"
     ).client.create(WeatherAPI::class.java) }
 }
+
 private val domainModule = module {
     factory { GetMeteorologicalDataUseCase(get(), get()) }
     factory { MeteorologicalDataUIMapper(get(), get(), get()) }

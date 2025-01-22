@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.network
+package br.com.everty.shared.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
