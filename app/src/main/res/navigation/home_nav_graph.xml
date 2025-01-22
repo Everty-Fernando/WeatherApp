@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="br.estudo.everty.app_weather.home.ui.screens.HomeFragment"
+        android:name="br.com.everty.home.home_ui.ui.HomeFragment"
         android:label="HomeFragment">
     </fragment>
 

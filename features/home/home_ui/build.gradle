@@ -1,44 +1,31 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace = "br.estudo.everty.app_weather"
-    compileSdk = 34
+    namespace 'br.com.everty.home.home_ui'
+    compileSdk 34
 
     defaultConfig {
-        applicationId = "br.estudo.everty.app_weather"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-        android.buildFeatures.buildConfig = true
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        minSdk 24
 
-        vectorDrawables {
-            useSupportLibrary = true
-        }
-        val API_KEY = "e5b9e97f0cdc5586bab24debec508038"
-        buildConfigField("String", "API_KEY", "\"${API_KEY}\"")
-
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = '1.8'
     }
     buildFeatures {
         compose = true
@@ -46,21 +33,14 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
+
     implementation(project(SharedModules.presentation))
-    implementation(project(SharedModules.network))
     implementation(project(SharedModules.utils))
 
-    implementation(project(FeatureModules.homeData))
     implementation(project(FeatureModules.homeDomain))
-    implementation(project(FeatureModules.homeUI))
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
@@ -82,11 +62,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation ("com.google.accompanist:accompanist-insets:0.20.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("io.insert-koin:koin-android:3.3.2")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
-    implementation("org.threeten:threetenbp:1.5.1")
     implementation("com.google.android.gms:play-services-location:20.0.0")
-    implementation("com.google.android.gms:play-services-places:17.0.0")
-    implementation("com.airbnb.android:lottie-compose:5.2.0")
 }
