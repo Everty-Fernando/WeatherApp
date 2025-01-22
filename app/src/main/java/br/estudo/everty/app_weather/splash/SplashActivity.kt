@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import br.com.everty.shared.presentation.design_system.theme.AppWeatherTheme
 import br.estudo.everty.app_weather.home.ui.HomeActivity
-import br.estudo.everty.app_weather.utils.activity.BaseActivity
+import br.com.everty.shared.utils.activity.BaseActivity
 
 
-class SplashActivity : BaseActivity() {
+class SplashActivity: BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

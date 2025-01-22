@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.utils.helpers
+package br.com.everty.shared.utils.helpers
 
 import android.Manifest
 import android.app.Activity

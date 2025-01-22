@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.utils.activity
+package br.com.everty.shared.utils.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

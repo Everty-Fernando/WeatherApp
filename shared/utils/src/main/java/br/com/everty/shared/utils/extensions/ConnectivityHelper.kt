@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.utils.extensions
+package br.com.everty.shared.utils.extensions
 
 import android.content.Context
 import android.net.ConnectivityManager

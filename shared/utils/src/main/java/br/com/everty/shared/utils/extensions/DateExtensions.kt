@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.utils.extensions
+package br.com.everty.shared.utils.extensions
 
 import org.threeten.bp.Instant
 import org.threeten.bp.LocalDate

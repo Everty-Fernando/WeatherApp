@@ -10,9 +10,9 @@ import br.estudo.everty.app_weather.home.ui.screens.events.HomeEvents
 import br.estudo.everty.app_weather.home.ui.screens.model.ErrorState
 import br.estudo.everty.app_weather.home.ui.screens.viewmodel.HomeViewModel
 import br.com.everty.shared.presentation.design_system.theme.AppWeatherTheme
-import br.estudo.everty.app_weather.utils.extensions.openLocationSettings
-import br.estudo.everty.app_weather.utils.extensions.redirectToAppSettings
-import br.estudo.everty.app_weather.utils.extensions.runAfter
+import br.com.everty.shared.utils.extensions.openLocationSettings
+import br.com.everty.shared.utils.extensions.redirectToAppSettings
+import br.com.everty.shared.utils.extensions.runAfter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment: Fragment() {
@@ -45,8 +45,12 @@ class HomeFragment: Fragment() {
     private val homeEvents = object: HomeEvents {
         override fun onClickError() {
             when (viewModel.homeStateUI.errorState) {
-                ErrorState.LOCATION_DISABLED -> openLocationSettings(requireActivity())
-                ErrorState.LOCATION_PERMISSION_DENIED -> redirectToAppSettings(requireActivity())
+                ErrorState.LOCATION_DISABLED -> openLocationSettings(
+                    requireActivity()
+                )
+                ErrorState.LOCATION_PERMISSION_DENIED -> redirectToAppSettings(
+                    requireActivity()
+                )
                 else -> {
                     viewModel.cleanErrorState()
                     viewModel.setLoading(true)

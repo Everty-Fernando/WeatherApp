@@ -12,9 +12,9 @@ import br.estudo.everty.app_weather.home.domain.model.MeteorologicalDataUI
 import br.estudo.everty.app_weather.home.domain.model.WeatherTimelineUI
 import br.estudo.everty.app_weather.home.ui.screens.model.ErrorState
 import br.estudo.everty.app_weather.home.ui.screens.state.HomeStateUI
-import br.estudo.everty.app_weather.utils.extensions.isConnected
-import br.estudo.everty.app_weather.utils.extensions.runAfter
-import br.estudo.everty.app_weather.utils.helpers.LocationHelper
+import br.com.everty.shared.utils.extensions.isConnected
+import br.com.everty.shared.utils.extensions.runAfter
+import br.com.everty.shared.utils.helpers.LocationHelper
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 class HomeViewModel(
     private val application: Application,
     private val getMeteorologicalDataUseCase: GetMeteorologicalDataUseCase,
-    private val locationHelper: LocationHelper
+    private val locationHelper:LocationHelper
 ): ViewModel() {
 
     var homeStateUI: HomeStateUI by mutableStateOf(HomeStateUI())

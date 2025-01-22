@@ -17,3 +17,4 @@ rootProject.name = "App Weather"
 include(":app")
 include(":shared:presentation")
 include(":shared:network")
+include(":shared:utils")

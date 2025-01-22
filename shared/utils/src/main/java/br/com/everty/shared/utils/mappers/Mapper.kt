@@ -1,4 +1,4 @@
-package br.estudo.everty.app_weather.utils.mappers
+package br.com.everty.shared.utils.mappers
 
 /**
  * Interface to be used whenever you need to map an object <From> to another object <To>

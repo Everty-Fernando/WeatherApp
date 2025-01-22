@@ -2,7 +2,7 @@ package br.estudo.everty.app_weather.home.domain.mappers
 
 import br.estudo.everty.app_weather.home.data.model.MeteorologicalDataResponse
 import br.estudo.everty.app_weather.home.domain.model.MeteorologicalDataUI
-import br.estudo.everty.app_weather.utils.mappers.Mapper
+import br.com.everty.shared.utils.mappers.Mapper
 
 class MeteorologicalDataUIMapper(
     private val currentMapper: WeatherDataUIMapper,
