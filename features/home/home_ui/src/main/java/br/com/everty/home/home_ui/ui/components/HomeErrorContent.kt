@@ -21,6 +21,6 @@ fun HomeErrorContent(errorState: ErrorState, onClick: () -> Unit) {
 @Composable
 fun HomeErrorContentPreview() {
     AppWeatherTheme {
-        HomeErrorContent(errorState = ErrorState.ERROR_SERVER, onClick = {})
+        HomeErrorContent(errorState = ErrorState.LocationGetError, onClick = {})
     }
 }
