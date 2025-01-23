@@ -10,15 +10,19 @@ import br.com.everty.home.home_ui.ui.screen.HomeScreen
 import br.com.everty.home.home_ui.ui.viewmodel.HomeViewModel
 import br.com.everty.home.home_ui.events.HomeEvents
 import br.com.everty.home.home_ui.model.ErrorState
+import br.com.everty.home.home_ui.state.HomeStateUI
 import br.com.everty.shared.presentation.design_system.theme.AppWeatherTheme
 import br.com.everty.shared.utils.extensions.openLocationSettings
 import br.com.everty.shared.utils.extensions.redirectToAppSettings
 import br.com.everty.shared.utils.extensions.runAfter
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class HomeFragment: Fragment() {
 
-    private val viewModel by viewModel<HomeViewModel>()
+    private val viewModel: HomeViewModel by viewModel {
+        parametersOf(HomeStateUI())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -3,6 +3,7 @@ package br.com.everty.home.home_data.repository
 import br.com.everty.home.home_data.BuildConfig
 import br.com.everty.home.home_data.model.MeteorologicalDataResponse
 import br.com.everty.home.home_data.service.WeatherAPI
+import br.com.everty.shared.network.exception.HttpExceptionMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -19,12 +20,12 @@ class WeatherRepositoryImpl(private val api: WeatherAPI): WeatherRepository {
             val dataResponse = response.body()
             if (response.isSuccessful && dataResponse != null) {
                 emit(dataResponse)
-            } else {// Como está sendo um uso simples, acabei não fazendo o mapeamento dos erros, para não exibir apenas um erro genérico para o usuário
-                throw Exception()
+            } else {
+                throw HttpExceptionMapper.mapHttpException(response)
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            throw Exception()
+            throw e
         }
     }
 }

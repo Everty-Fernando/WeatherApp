@@ -22,10 +22,11 @@ import kotlinx.coroutines.launch
 class HomeViewModel(
     private val application: Application,
     private val getMeteorologicalDataUseCase: GetMeteorologicalDataUseCase,
-    private val locationHelper:LocationHelper
+    private val locationHelper:LocationHelper,
+    initialState: HomeStateUI = HomeStateUI()
 ): ViewModel() {
 
-    var homeStateUI: HomeStateUI by mutableStateOf(HomeStateUI())
+    var homeStateUI: HomeStateUI by mutableStateOf(initialState)
         private set
 
     var latitude: Double = 0.0

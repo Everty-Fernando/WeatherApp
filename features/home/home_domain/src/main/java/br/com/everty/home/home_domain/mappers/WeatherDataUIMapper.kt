@@ -19,8 +19,8 @@ class WeatherDataUIMapper(
                 date = date.convertTimestampToString(FORMAT_MONTH_YEAR_FULL),
                 listSummary = summaryMapper.toObject(fromObject),
                 temperature = temperature.toDegreeCelsius(),
-                description = weather.first().description.firstLetterUpperCase(),
-                icon = weatherImageUIMapper.toObject(weather.first().main),
+                description = weather.firstOrNull()?.description?.firstLetterUpperCase() ?: "",
+                icon = weatherImageUIMapper.toObject(weather.firstOrNull()?.main ?: ""),
             )
         }
     }
