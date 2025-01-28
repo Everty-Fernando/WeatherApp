@@ -39,7 +39,7 @@ class HomeViewModel(
      * Checar se a localização está ativada e definir estado de erro, se necessário.
      */
     fun checkLocationEnabled() {
-        if (!locationHelper.isLocationEnabled()) setErrorState(ErrorState.LOCATION_DISABLED)
+        if (!locationHelper.isLocationEnabled()) setErrorState(ErrorState.LocationDisabled)
         else cleanErrorState()
     }
 
@@ -54,7 +54,7 @@ class HomeViewModel(
             activity = activity,
             onPermissionGranted = onPermissionGranted,
             onPermissionDenied = {
-                setErrorState(ErrorState.LOCATION_PERMISSION_DENIED)
+                setErrorState(ErrorState.LocationPermissionDenied)
             }
         )
     }
@@ -71,7 +71,7 @@ class HomeViewModel(
                 checkNetworkAndFetchData()
             },
             onError = {
-                setErrorState(ErrorState.ERROR_GET_LOCATION)
+                setErrorState(ErrorState.LocationGetError)
             }
         )
     }
@@ -80,7 +80,7 @@ class HomeViewModel(
      * Checar se a rede está disponível e buscar dados meteorológicos.
      */
     fun checkNetworkAndFetchData() {
-        if (!application.isConnected()) setErrorState(ErrorState.NETWORK_DISABLED)
+        if (!application.isConnected()) setErrorState(ErrorState.NetworkDisabled)
         else getMeteorologicalData()
     }
 
@@ -113,8 +113,9 @@ class HomeViewModel(
     private fun getMeteorologicalData() = viewModelScope.launch {
         getMeteorologicalDataUseCase(latitude, longitude).onStart {
             setLoading(true)
-        }.catch {
-            setErrorState(ErrorState.ERROR_SERVER)
+        }.catch { exception ->
+            val errorMessage = exception.message ?: "Erro desconhecido."
+            setErrorState(ErrorState.ServerError(errorMessage))
         }.collect { meteorologicalData ->
             setHomeStateUI(
                 meteorologicalDataUI = meteorologicalData,

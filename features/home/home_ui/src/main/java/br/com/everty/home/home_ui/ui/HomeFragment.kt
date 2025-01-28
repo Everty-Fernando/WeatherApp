@@ -50,10 +50,10 @@ class HomeFragment: Fragment() {
     private val homeEvents = object: HomeEvents {
         override fun onClickError() {
             when (viewModel.homeStateUI.errorState) {
-                ErrorState.LOCATION_DISABLED -> openLocationSettings(
+                ErrorState.LocationDisabled -> openLocationSettings(
                     requireActivity()
                 )
-                ErrorState.LOCATION_PERMISSION_DENIED -> redirectToAppSettings(
+                ErrorState.LocationPermissionDenied -> redirectToAppSettings(
                     requireActivity()
                 )
                 else -> {
