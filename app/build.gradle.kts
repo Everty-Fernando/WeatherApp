@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "br.estudo.everty.app_weather"
-    compileSdk = 34
+    compileSdk = ApplicationConfig.compileSdkVersion
 
     defaultConfig {
-        applicationId = "br.estudo.everty.app_weather"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = ApplicationConfig.id
+        minSdk = ApplicationConfig.minSdk
+        targetSdk = ApplicationConfig.targetSdk
+        versionCode = Releases.versionCode
+        versionName = Releases.versionName
         android.buildFeatures.buildConfig = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -62,31 +62,18 @@ dependencies {
     implementation(project(FeatureModules.homeDomain))
     implementation(project(FeatureModules.homeUI))
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    implementation("androidx.activity:activity-compose:1.8.2")
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.ui:ui-text-google-fonts:1.6.1")
-    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation("androidx.navigation:navigation-fragment:2.7.7")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation ("com.google.accompanist:accompanist-insets:0.20.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("io.insert-koin:koin-android:3.3.2")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
-    implementation("org.threeten:threetenbp:1.5.1")
-    implementation("com.google.android.gms:play-services-location:20.0.0")
-    implementation("com.google.android.gms:play-services-places:17.0.0")
-    implementation("com.airbnb.android:lottie-compose:5.2.0")
+    implementation(platform(Compose.composeBom))
+    implementation(Compose.uiTooling)
+    implementation(Compose.material3)
+    implementation(Compose.activity)
+    implementation(Compose.lottie)
+
+    implementation(AndroidX.coordinatorlayout)
+    implementation(AndroidX.androidCore)
+    implementation(AndroidX.lifecycleRuntime)
+
+    implementation(Jetpack.navigationUi)
+    implementation(Jetpack.navigationFragment)
+
+    implementation(Koin.koinAndroid)
 }
