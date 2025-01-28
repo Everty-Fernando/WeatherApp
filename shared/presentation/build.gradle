@@ -1,0 +1,46 @@
+apply plugin: AndroidPlugins.androidLibrary
+apply plugin: Kotlin.kotlinAndroid
+
+android {
+    namespace 'br.com.everty.shared.presentation'
+    compileSdk ApplicationConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdk ApplicationConfig.minSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Compose.composeCompilerVersion
+    }
+}
+
+dependencies {
+    implementation(platform(Compose.composeBom))
+    implementation(Compose.uiTooling)
+    implementation(Compose.material3)
+    implementation(Compose.lottie)
+
+    implementation(AndroidX.coordinatorlayout)
+
+    implementation(Jetpack.navigationUi)
+
+}

@@ -15,4 +15,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "App Weather"
 include(":app")
- 
+include(":shared:presentation")
+include(":shared:network")
+include(":shared:utils")
+include(":features:home:home_data")
+include(":features:home:home_domain")
+include(":features:home:home_ui")

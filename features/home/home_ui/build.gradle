@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'br.com.everty.home.home_ui'
+    compileSdk ApplicationConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdk ApplicationConfig.minSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.3"
+    }
+}
+
+dependencies {
+
+    implementation(project(SharedModules.presentation))
+    implementation(project(SharedModules.utils))
+
+    implementation(project(FeatureModules.homeDomain))
+
+    implementation(platform(Compose.composeBom))
+    implementation(Compose.uiTooling)
+    implementation(Compose.material3)
+    implementation(Compose.activity)
+
+    implementation(AndroidX.coordinatorlayout)
+    implementation(AndroidX.androidCore)
+    implementation(AndroidX.lifecycleRuntime)
+
+    implementation(Jetpack.navigationUi)
+    implementation(Jetpack.navigationFragment)
+
+    implementation(Koin.koinAndroid)
+
+    testImplementation Kotlin.coroutinesTest
+
+    testImplementation Testing.coreTesting
+    testImplementation Testing.mockk
+}
