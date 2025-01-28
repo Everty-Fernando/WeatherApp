@@ -69,8 +69,8 @@ class HomeFragment: Fragment() {
             }
         }
 
-        override fun onFilterSelected(isDaily: Boolean) {
-            viewModel.onFilterSelected(isDaily)
+        override fun onFilterSelected(isWeekly: Boolean) {
+            viewModel.onFilterSelected(isWeekly)
         }
     }
 

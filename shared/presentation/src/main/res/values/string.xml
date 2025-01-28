@@ -18,4 +18,6 @@
     <string name="item_summary_wind">Vento</string>
     <string name="item_summary_drop">Umidade</string>
 
+    <!-- Errors -->
+    <string name="unknown_error">Erro desconhecido.</string>
 </resources>

@@ -11,6 +11,7 @@ import br.com.everty.home.home_domain.model.MeteorologicalDataUI
 import br.com.everty.home.home_domain.model.WeatherTimelineUI
 import br.com.everty.home.home_domain.usecase.GetMeteorologicalDataUseCase
 import br.com.everty.home.home_ui.model.ErrorState
+import br.com.everty.home.home_ui.model.FilterType
 import br.com.everty.home.home_ui.state.HomeStateUI
 import br.com.everty.shared.utils.extensions.isConnected
 import br.com.everty.shared.utils.extensions.runAfter
@@ -18,6 +19,7 @@ import br.com.everty.shared.utils.helpers.LocationHelper
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
+import br.com.everty.shared.presentation.R
 
 class HomeViewModel(
     private val application: Application,
@@ -84,8 +86,9 @@ class HomeViewModel(
         else getMeteorologicalData()
     }
 
-    fun onFilterSelected(isDaily: Boolean) {
-        val listWeather = getFilteredWeather(isDaily)
+    fun onFilterSelected(isWeekly: Boolean) {
+        setFilterSelected(isWeekly)
+        val listWeather = getFilteredWeather(isWeekly)
         updateFiltersState(listWeather)
     }
 
@@ -114,20 +117,41 @@ class HomeViewModel(
         getMeteorologicalDataUseCase(latitude, longitude).onStart {
             setLoading(true)
         }.catch { exception ->
-            val errorMessage = exception.message ?: "Erro desconhecido."
+            val errorMessage = exception.message ?: application.getString(R.string.unknown_error)
             setErrorState(ErrorState.ServerError(errorMessage))
         }.collect { meteorologicalData ->
             setHomeStateUI(
                 meteorologicalDataUI = meteorologicalData,
                 isLoading = false
             )
-            onFilterSelected(true)
+            onFilterSelected(isWeekly = false)
+        }
+    }
+
+    private fun setErrorState(errorState: ErrorState) {
+        setHomeStateUI(errorState = errorState, isLoading = false)
+    }
+
+    private fun setFilterSelected(isWeekly: Boolean) {
+        setHomeStateUI(filterSelected = if (isWeekly) FilterType.WEEKLY else FilterType.DAILY)
+    }
+
+    private fun getFilteredWeather(isWeekly: Boolean): List<WeatherTimelineUI> {
+        return if (!isWeekly) homeStateUI.meteorologicalDataUI?.hourly ?: emptyList()
+        else homeStateUI.meteorologicalDataUI?.daily ?: emptyList()
+    }
+
+    private fun updateFiltersState(listWeather: List<WeatherTimelineUI>) {
+        setHomeStateUI(listWeathersFiltered = listWeather, isLoadingFilters = true)
+        runAfter { //Colocando um delay no loading, apenas para experiencia do usuário
+            setHomeStateUI(isLoadingFilters = false)
         }
     }
 
     private fun setHomeStateUI(
         meteorologicalDataUI: MeteorologicalDataUI? = homeStateUI.meteorologicalDataUI,
         cityName: String = homeStateUI.cityName,
+        filterSelected: FilterType = homeStateUI.filterSelected,
         isLoading: Boolean = homeStateUI.isLoading,
         locationEnabled: Boolean = homeStateUI.locationEnabled,
         errorState: ErrorState? = homeStateUI.errorState,
@@ -138,26 +162,11 @@ class HomeViewModel(
             isLoading = isLoading,
             meteorologicalDataUI = meteorologicalDataUI,
             cityName = cityName,
+            filterSelected = filterSelected,
             locationEnabled = locationEnabled,
             errorState = errorState,
             isLoadingFilters = isLoadingFilters,
             listWeathersFiltered = listWeathersFiltered
         )
-    }
-
-    private fun setErrorState(errorState: ErrorState) {
-        setHomeStateUI(errorState = errorState, isLoading = false)
-    }
-
-    private fun getFilteredWeather(isDaily: Boolean): List<WeatherTimelineUI> {
-        return if (isDaily) homeStateUI.meteorologicalDataUI?.daily ?: emptyList()
-        else homeStateUI.meteorologicalDataUI?.hourly ?: emptyList()
-    }
-
-    private fun updateFiltersState(listWeather: List<WeatherTimelineUI>) {
-        setHomeStateUI(listWeathersFiltered = listWeather, isLoadingFilters = true)
-        runAfter { //Colocando um delay no loading, apenas para experiencia do usuário
-            setHomeStateUI(isLoadingFilters = false)
-        }
     }
 }
