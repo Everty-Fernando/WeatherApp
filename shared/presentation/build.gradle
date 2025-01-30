@@ -1,7 +1,5 @@
-plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
-}
+apply plugin: AndroidPlugins.androidLibrary
+apply plugin: Kotlin.kotlinAndroid
 
 android {
     namespace 'br.com.everty.shared.presentation'
@@ -31,21 +29,18 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion "1.4.4"
+        kotlinCompilerExtensionVersion Compose.composeCompilerVersion
     }
 }
 
 dependencies {
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.ui:ui-text-google-fonts:1.6.1")
-    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation("androidx.navigation:navigation-fragment:2.7.7")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation("com.airbnb.android:lottie-compose:5.2.0")
+    implementation(platform(Compose.composeBom))
+    implementation(Compose.uiTooling)
+    implementation(Compose.material3)
+    implementation(Compose.lottie)
+
+    implementation(AndroidX.coordinatorlayout)
+
+    implementation(Jetpack.navigationUi)
+
 }

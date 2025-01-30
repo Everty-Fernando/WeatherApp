@@ -70,7 +70,10 @@ fun HomeContent(
 
             HomeSummaryWeatherContent(weatherDataUI = meteorologicalData.current)
 
-            HomeFilters(onFilterDailySelected = onFilterSelected)
+            HomeFilters(
+                filterSelected = homeStateUI.filterSelected,
+                onFilterWeeklySelected = onFilterSelected
+            )
 
             if (homeStateUI.isLoadingFilters) HomeFooterLoading()
             else HomeFooter(weatherList = homeStateUI.listWeathersFiltered)

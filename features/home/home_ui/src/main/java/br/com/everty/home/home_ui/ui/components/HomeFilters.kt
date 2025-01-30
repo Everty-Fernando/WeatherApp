@@ -13,40 +13,42 @@ import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import br.com.everty.home.home_ui.model.FilterType
+import br.com.everty.shared.presentation.R
 import br.com.everty.shared.presentation.design_system.theme.AppSpacing
 import br.com.everty.shared.presentation.design_system.theme.AppWeatherExtended
 import br.com.everty.shared.presentation.design_system.theme.lightExtendedColors
-import br.com.everty.shared.presentation.R
 
 @Composable
-fun HomeFilters(onFilterDailySelected: (Boolean) -> Unit) {
-    Row(modifier = Modifier
-        .fillMaxWidth()
-        .padding(top = AppSpacing.base),
+fun HomeFilters(
+    filterSelected: FilterType,
+    onFilterWeeklySelected: (Boolean) -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = AppSpacing.base),
         horizontalArrangement = Arrangement.Center
     ) {
-        var selectedDaily by remember { mutableStateOf(true) }
-        var selectedWeekly by remember { mutableStateOf(false) }
-
-        FilterHome(text = stringResource(R.string.filter_daily), selected = selectedDaily, onFilterChanged = {
-            selectedDaily = !selectedDaily
-            selectedWeekly = !selectedDaily
-            onFilterDailySelected(selectedDaily)
-        })
+        FilterHome(
+            text = stringResource(R.string.filter_daily),
+            selected = filterSelected == FilterType.DAILY,
+            onFilterChanged = {
+                onFilterWeeklySelected(false)
+            }
+        )
 
         Spacer(modifier = Modifier.width(AppSpacing.regular))
 
-        FilterHome(text = stringResource(R.string.filter_weekly),selected = selectedWeekly, onFilterChanged = {
-            selectedWeekly = !selectedWeekly
-            selectedDaily = !selectedWeekly
-            onFilterDailySelected(!selectedWeekly)
-        })
+        FilterHome(
+            text = stringResource(R.string.filter_weekly),
+            selected = filterSelected == FilterType.WEEKLY,
+            onFilterChanged = {
+                onFilterWeeklySelected(true)
+            }
+        )
     }
 }
 

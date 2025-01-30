@@ -73,5 +73,5 @@ val homeStateUIPreview = HomeStateUI(
 val homeEventsPreview = object: HomeEvents {
     override fun onClickError() {}
 
-    override fun onFilterSelected(isDaily: Boolean) {}
+    override fun onFilterSelected(isWeekly: Boolean) {}
 }

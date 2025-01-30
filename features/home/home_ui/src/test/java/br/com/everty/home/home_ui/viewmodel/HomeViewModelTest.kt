@@ -60,7 +60,7 @@ class HomeViewModelTest {
 
         viewModel.checkLocationEnabled()
 
-        assertEquals(ErrorState.LOCATION_DISABLED, viewModel.homeStateUI.errorState)
+        assertEquals(ErrorState.LocationDisabled, viewModel.homeStateUI.errorState)
     }
 
     @Test
@@ -104,7 +104,7 @@ class HomeViewModelTest {
 
         viewModel.requestPermissionLocale(mockk(), mockk())
 
-        assertEquals(ErrorState.LOCATION_PERMISSION_DENIED, viewModel.homeStateUI.errorState)
+        assertEquals(ErrorState.LocationPermissionDenied, viewModel.homeStateUI.errorState)
     }
 
     @Test
@@ -150,7 +150,7 @@ class HomeViewModelTest {
 
         viewModel.getDeviceLocation()
 
-        assertEquals(ErrorState.ERROR_GET_LOCATION, viewModel.homeStateUI.errorState)
+        assertEquals(ErrorState.LocationGetError, viewModel.homeStateUI.errorState)
     }
 
     @Test
@@ -159,7 +159,7 @@ class HomeViewModelTest {
 
         viewModel.checkNetworkAndFetchData()
 
-        assertEquals(ErrorState.NETWORK_DISABLED, viewModel.homeStateUI.errorState)
+        assertEquals(ErrorState.NetworkDisabled, viewModel.homeStateUI.errorState)
     }
 
     @Test

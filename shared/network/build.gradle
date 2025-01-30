@@ -1,7 +1,5 @@
-plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
-}
+apply plugin: AndroidPlugins.androidLibrary
+apply plugin: Kotlin.kotlinAndroid
 
 android {
     namespace 'br.com.everty.shared.network'
@@ -30,6 +28,6 @@ android {
 }
 
 dependencies {
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation(Squareup.retrofitConverter)
+    implementation(Squareup.okhttp3)
 }

@@ -2,6 +2,7 @@ package br.estudo.everty.app_weather.app
 
 import android.app.Application
 import br.estudo.everty.app_weather.app.di.HomeModuleInit
+import br.estudo.everty.app_weather.app.di.SharedModuleInit
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -16,6 +17,7 @@ class WeatherApp: Application() {
     }
 
     private fun initFeatures() {
+        SharedModuleInit.initSharedModule()
         HomeModuleInit.initHomeModule()
     }
 }
