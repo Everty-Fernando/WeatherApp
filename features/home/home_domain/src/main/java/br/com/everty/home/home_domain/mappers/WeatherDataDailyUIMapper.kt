@@ -19,7 +19,7 @@ class WeatherDataDailyUIMapper(
         return WeatherTimelineUI(
             date = checkCurrentDate(fromObject.date),
             temperature = getMinMaxTemperature(fromObject.temperature),
-            icon = weatherImageUIMapper.toObject(fromObject.weather.first().main),
+            icon = weatherImageUIMapper.toObject(fromObject.weather.first().id),
         )
     }
 

@@ -13,6 +13,7 @@ interface WeatherAPI {
         @Query("lon") lon: Double,
         @Query("lang") lang: String = "pt_br",
         @Query("units") units: String = "metric",
+        @Query("exclude") exclude: String = "minutely",
         @Query("appid") appId: String,
     ): Response<MeteorologicalDataResponse>
 }

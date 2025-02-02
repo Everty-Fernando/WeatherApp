@@ -16,7 +16,7 @@ class WeatherDataHoursUIMapper(
         return WeatherTimelineUI(
             date = checkCurrentDate(fromObject.date),
             temperature = fromObject.temperature.toDegreeCelsius(),
-            icon = weatherImageUIMapper.toObject(fromObject.weather.first().main),
+            icon = weatherImageUIMapper.toObject(fromObject.weather.first().id),
         )
     }
 

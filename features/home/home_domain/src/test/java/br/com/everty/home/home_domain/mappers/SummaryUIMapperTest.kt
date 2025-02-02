@@ -53,6 +53,7 @@ class SummaryUIMapperTest {
             windSpeed = "15",
             weather = listOf(
                 WeatherResponse(
+                    id = 803,
                     main = "Clouds",
                     description = "broken clouds"
                 )
@@ -72,6 +73,7 @@ class SummaryUIMapperTest {
             uvi = 5.0,
             weather = listOf(
                 WeatherResponse(
+                    id = 800,
                     main = "Clear",
                     description = "clear sky"
                 )

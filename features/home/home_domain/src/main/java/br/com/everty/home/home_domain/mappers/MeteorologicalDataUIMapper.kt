@@ -13,7 +13,7 @@ class MeteorologicalDataUIMapper(
     override fun toObject(fromObject: MeteorologicalDataResponse): MeteorologicalDataUI {
         return MeteorologicalDataUI(
             current = currentMapper.toObject(fromObject),
-            hourly = hoursMapper.toObjectList(fromObject.hourly),
+            hourly = hoursMapper.toObjectList(fromObject.hourly.take(24)),
             daily = dayMapper.toObjectList(fromObject.daily)
         )
     }

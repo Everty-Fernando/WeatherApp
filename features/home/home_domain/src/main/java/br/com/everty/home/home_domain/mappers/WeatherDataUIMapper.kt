@@ -20,7 +20,7 @@ class WeatherDataUIMapper(
                 listSummary = summaryMapper.toObject(fromObject),
                 temperature = temperature.toDegreeCelsius(),
                 description = weather.firstOrNull()?.description?.firstLetterUpperCase() ?: "",
-                icon = weatherImageUIMapper.toObject(weather.firstOrNull()?.main ?: ""),
+                icon = weatherImageUIMapper.toObject(weather.firstOrNull()?.id ?: 0),
             )
         }
     }

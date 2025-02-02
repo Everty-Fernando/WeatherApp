@@ -23,6 +23,7 @@ class WeatherDataUIMapperTest {
     @Test
     fun `given valid WeatherDataResponse when mapped should return WeatherDataUI`() {
         val weatherDescription = WeatherResponse(
+            id = 800,
             main = "Clear",
             description = "clear sky"
         )
@@ -48,7 +49,7 @@ class WeatherDataUIMapperTest {
         val expectedIcon = 123
 
         every { summaryMapper.toObject(meteorologicalDataResponse) } returns expectedSummary
-        every { weatherImageUIMapper.toObject(weatherDescription.main) } returns expectedIcon
+        every { weatherImageUIMapper.toObject(weatherDescription.id) } returns expectedIcon
 
         val result = mapper.toObject(meteorologicalDataResponse)
 
