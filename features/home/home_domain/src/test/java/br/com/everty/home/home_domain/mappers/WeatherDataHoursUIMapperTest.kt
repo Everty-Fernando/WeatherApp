@@ -25,6 +25,7 @@ class WeatherDataHoursUIMapperTest {
     @Test
     fun `given valid WeatherDataResponse, when mapped, should return WeatherTimelineUI`() {
         val mockWeatherResponse = WeatherResponse(
+            id = 800,
             main = "Clear",
             description = "clear sky"
         )
@@ -43,11 +44,11 @@ class WeatherDataHoursUIMapperTest {
         )
         val expectedIcon = R.drawable.ic_sun
 
-        every { weatherImageUIMapper.toObject("Clear") } returns expectedIcon
+        every { weatherImageUIMapper.toObject(800) } returns expectedIcon
 
         val result = mapper.toObject(mockWeatherDataResponse)
 
-        assertEquals("20:00", result.date)
+        assertEquals("Agora", result.date)
         assertEquals("20°", result.temperature)
         assertEquals(expectedIcon, result.icon)
     }
@@ -55,6 +56,7 @@ class WeatherDataHoursUIMapperTest {
     @Test
     fun `given WeatherDataResponse with a different hour, when mapped, should return hour with 00`() {
         val mockWeatherResponse = WeatherResponse(
+            id = 531,
             main = "Rain",
             description = "light rain"
         )
@@ -71,9 +73,9 @@ class WeatherDataHoursUIMapperTest {
             windSpeed = "4.2",
             weather = listOf(mockWeatherResponse)
         )
-        val expectedIcon = R.drawable.rain
+        val expectedIcon = R.drawable.light_rain
 
-        every { weatherImageUIMapper.toObject("Rain") } returns expectedIcon
+        every { weatherImageUIMapper.toObject(531) } returns expectedIcon
 
         val result = mapper.toObject(mockWeatherDataResponse)
 

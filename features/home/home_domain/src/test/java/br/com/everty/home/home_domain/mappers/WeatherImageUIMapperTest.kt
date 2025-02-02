@@ -15,8 +15,8 @@ class WeatherImageUIMapperTest {
     }
 
     @Test
-    fun `given Clear weather type, when mapped, should return sun icon`() {
-        val weatherType = "Clear"
+    fun `given Clear when mapped should return Sun icon`() {
+        val weatherType = 800
         val expectedIcon = R.drawable.sun
 
         val result = mapper.toObject(weatherType)
@@ -25,45 +25,71 @@ class WeatherImageUIMapperTest {
     }
 
     @Test
-    fun `given Rain weather type, when mapped, should return rain icon`() {
-        val weatherType = "Rain"
-        val expectedIcon = R.drawable.rain
-
-        val result = mapper.toObject(weatherType)
-
-        assertEquals(expectedIcon, result)
-    }
-
-    @Test
-    fun `given Clouds weather type, when mapped, should return sun clouds icon`() {
-        val weatherType = "Clouds"
+    fun `given Partially Cloudy when mapped should return Sun with Clouds icon`() {
+        val weatherTypes = listOf(801, 802)
         val expectedIcon = R.drawable.sun_clouds
 
+        weatherTypes.forEach { weatherType ->
+            val result = mapper.toObject(weatherType)
+            assertEquals(expectedIcon, result)
+        }
+    }
+
+    @Test
+    fun `given Cloudy when mapped should return Clouds icon`() {
+        val weatherTypes = listOf(803, 804)
+        val expectedIcon = R.drawable.clouds
+
+        weatherTypes.forEach { weatherType ->
+            val result = mapper.toObject(weatherType)
+            assertEquals(expectedIcon, result)
+        }
+    }
+
+    @Test
+    fun `given Light Rain when mapped should return Light Rain icon`() {
+        val weatherTypes = listOf(300, 301, 302, 310, 311, 312, 313, 314, 321, 500, 501, 520, 521, 531)
+        val expectedIcon = R.drawable.light_rain
+
+        weatherTypes.forEach { weatherType ->
+            val result = mapper.toObject(weatherType)
+            assertEquals(expectedIcon, result)
+        }
+    }
+
+    @Test
+    fun `given Heavy Rain or Thunderstorm when mapped should return Heavy Rain icon`() {
+        val weatherTypes = listOf(200, 201, 202, 210, 211, 212, 221, 230, 231, 232, 502, 503, 504, 522)
+        val expectedIcon = R.drawable.heavy_rain
+
+        weatherTypes.forEach { weatherType ->
+            val result = mapper.toObject(weatherType)
+            assertEquals(expectedIcon, result)
+        }
+    }
+
+    @Test
+    fun `given Freezing Rain when mapped should return Freezing Rain icon`() {
+        val weatherType = 511
+        val expectedIcon = R.drawable.freezing_rain
+
         val result = mapper.toObject(weatherType)
 
         assertEquals(expectedIcon, result)
     }
 
     @Test
-    fun `given Thunderstorm weather type, when mapped, should return thunder icon`() {
-        val weatherType = "Thunderstorm"
-        val expectedIcon = R.drawable.thunder
+    fun `given Unknown weather type when mapped should return Default Clouds icon`() {
+        val unknownWeatherTypes = listOf(999, -1, 1000, 700)
+        val expectedIcon = R.drawable.clouds
 
-        val result = mapper.toObject(weatherType)
-
-        assertEquals(expectedIcon, result)
-    }
-
-    @Test
-    fun `given unknown weather type, when mapped, should return default sun icon`() {
-        val weatherType = "UnknownType"
-        val expectedIcon = R.drawable.sun
-
-        val result = mapper.toObject(weatherType)
-
-        assertEquals(expectedIcon, result)
+        unknownWeatherTypes.forEach { weatherType ->
+            val result = mapper.toObject(weatherType)
+            assertEquals(expectedIcon, result)
+        }
     }
 }
+
 
 
 

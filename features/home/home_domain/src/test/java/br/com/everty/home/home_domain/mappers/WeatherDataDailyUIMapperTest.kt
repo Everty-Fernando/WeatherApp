@@ -38,7 +38,7 @@ class WeatherDataDailyUIMapperTest {
     @Test
     fun `given valid WeatherDailyResponse when mapped should return correct WeatherTimelineUI`() {
         val date = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC)
-        val weather = WeatherResponse(main = "Clear", description = "clear sky")
+        val weather = WeatherResponse(id = 800, main = "Clear", description = "clear sky")
 
         val weatherDailyResponse = WeatherDailyResponse(
             date = date,
@@ -53,7 +53,7 @@ class WeatherDataDailyUIMapperTest {
             windSpeed = "15",
         )
 
-        every { weatherImageUIMapper.toObject("Clear") } returns R.drawable.sun
+        every { weatherImageUIMapper.toObject(800) } returns R.drawable.sun
 
         val result = mapper.toObject(weatherDailyResponse)
 
@@ -65,7 +65,7 @@ class WeatherDataDailyUIMapperTest {
     @Test
     fun `given WeatherDailyResponse for tomorrow's date when mapped should return 'Am ' as date`() {
         val tomorrow = LocalDateTime.now().plusDays(1).toEpochSecond(ZoneOffset.UTC)
-        val weather = WeatherResponse(main = "Clouds", description = "cloudy sky")
+        val weather = WeatherResponse(id = 801, main = "Clouds", description = "cloudy sky")
 
         val weatherDailyResponse = WeatherDailyResponse(
             date = tomorrow,
@@ -80,7 +80,7 @@ class WeatherDataDailyUIMapperTest {
             windSpeed = "15",
         )
 
-        every { weatherImageUIMapper.toObject("Clouds") } returns R.drawable.sun_clouds
+        every { weatherImageUIMapper.toObject(801) } returns R.drawable.sun_clouds
 
         val result = mapper.toObject(weatherDailyResponse)
 
@@ -92,7 +92,7 @@ class WeatherDataDailyUIMapperTest {
     @Test
     fun `given WeatherDailyResponse for other day when mapped should return day of the week as date`() {
         val specificDay = LocalDateTime.now().plusDays(3).toEpochSecond(ZoneOffset.UTC)
-        val weather = WeatherResponse(main = "Rain", description = "rainy day")
+        val weather = WeatherResponse(id = 300, main = "Rain", description = "rainy day")
 
         val weatherDailyResponse = WeatherDailyResponse(
             date = specificDay,
@@ -107,7 +107,7 @@ class WeatherDataDailyUIMapperTest {
             windSpeed = "15",
         )
 
-        every { weatherImageUIMapper.toObject("Rain") } returns R.drawable.rain
+        every { weatherImageUIMapper.toObject(300) } returns R.drawable.light_rain
 
         val result = mapper.toObject(weatherDailyResponse)
 
@@ -118,7 +118,7 @@ class WeatherDataDailyUIMapperTest {
 
         assertEquals(expectedDay, result.date)
         assertEquals("30°/19°", result.temperature)
-        assertEquals(R.drawable.rain, result.icon)
+        assertEquals(R.drawable.light_rain, result.icon)
     }
 }
 

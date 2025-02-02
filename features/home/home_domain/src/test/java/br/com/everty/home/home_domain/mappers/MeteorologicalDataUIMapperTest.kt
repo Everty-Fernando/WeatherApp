@@ -1,6 +1,7 @@
 package br.com.everty.home.home_domain.mappers
 
 import br.com.everty.home.home_data.model.MeteorologicalDataResponse
+import br.com.everty.home.home_data.model.WeatherDataResponse
 import br.com.everty.home.home_domain.model.WeatherDataUI
 import br.com.everty.home.home_domain.model.WeatherTimelineUI
 import io.mockk.every
@@ -28,9 +29,11 @@ class MeteorologicalDataUIMapperTest {
         val mockCurrent = mockk<WeatherDataUI>()
         val mockHourlyList = listOf(mockk<WeatherTimelineUI>())
         val mockDailyList = listOf(mockk<WeatherTimelineUI>())
+        val mockHourlyResponse = listOf(mockk<WeatherDataResponse>())
 
+        every { mockResponse.hourly } returns mockHourlyResponse
         every { currentMapper.toObject(mockResponse) } returns mockCurrent
-        every { hoursMapper.toObjectList(mockResponse.hourly) } returns mockHourlyList
+        every { hoursMapper.toObjectList(mockHourlyResponse) } returns mockHourlyList
         every { dayMapper.toObjectList(mockResponse.daily) } returns mockDailyList
 
         val result = mapper.toObject(mockResponse)
@@ -40,6 +43,7 @@ class MeteorologicalDataUIMapperTest {
         assertEquals(mockHourlyList, result.hourly)
         assertEquals(mockDailyList, result.daily)
     }
+
 
     @Test
     fun `given MeteorologicalDataResponse with null hourly and daily when mapped then returns empty lists`() {

@@ -43,17 +43,17 @@ val hourlyWeatherTimelinePreview = listOf(
     WeatherTimelineUI("4PM", "13°", R.drawable.sun),
     WeatherTimelineUI("6PM", "13°", R.drawable.sun),
     WeatherTimelineUI("8PM", "13°", R.drawable.ic_cloud),
-    WeatherTimelineUI("10PM", "13°", R.drawable.rain),
-    WeatherTimelineUI("12PM", "13°", R.drawable.rain)
+    WeatherTimelineUI("10PM", "13°", R.drawable.light_rain),
+    WeatherTimelineUI("12PM", "13°", R.drawable.light_rain)
 )
 
 val dailyWeatherTimelinePreview = listOf(
     WeatherTimelineUI("Hoje", "13°", R.drawable.sun_clouds),
-    WeatherTimelineUI("Amanhã", "14°", R.drawable.rain),
-    WeatherTimelineUI("Segunda", "12°", R.drawable.rain),
-    WeatherTimelineUI("Terça", "15°", R.drawable.rain),
-    WeatherTimelineUI("Quarta", "11°", R.drawable.thunder),
-    WeatherTimelineUI("Quinta", "13°", R.drawable.thunder)
+    WeatherTimelineUI("Amanhã", "14°", R.drawable.light_rain),
+    WeatherTimelineUI("Segunda", "12°", R.drawable.light_rain),
+    WeatherTimelineUI("Terça", "15°", R.drawable.light_rain),
+    WeatherTimelineUI("Quarta", "11°", R.drawable.heavy_rain),
+    WeatherTimelineUI("Quinta", "13°", R.drawable.heavy_rain)
 )
 
 val meteorologicalDataPreview = MeteorologicalDataUI(
