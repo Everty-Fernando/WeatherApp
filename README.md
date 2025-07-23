@@ -49,3 +49,18 @@ Contribuições são bem-vindas! Se você encontrar algum problema, tiver uma su
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
+
+### Demonstração
+
+
+
+https://github.com/user-attachments/assets/e396ccf5-d580-46cd-aeed-2b9e15d636ab
+
+
+https://github.com/user-attachments/assets/d736bb70-38ad-426a-baeb-da79a430c451
+
+
+https://github.com/user-attachments/assets/4fddf5a7-f24e-40c8-898a-839bc8895f66
+
+
+
